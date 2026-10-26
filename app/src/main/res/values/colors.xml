@@ -3,4 +3,6 @@
     <color name="black">#FAF5F5</color>
     <color name="white">#FFFFFFFF</color>
     <color name="screen_bg">#0F1A54</color>
+    <color name="result_correct">#4CAF50</color>
+    <color name="result_wrong">#F44336</color>
 </resources>

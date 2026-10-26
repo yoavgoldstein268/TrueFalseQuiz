@@ -19,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        boolean isCorrect = getIntent().getBooleanExtra("isCorrect", false);
+
+        if (isCorrect) {
+            findViewById(R.id.main).setBackgroundColor(getColor(R.color.result_correct));
+        } else {
+            findViewById(R.id.main).setBackgroundColor(getColor(R.color.result_wrong));
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -54,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     isCorrect = false;
                 }
-
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("isCorrect", isCorrect);
                 startActivity(intent);
             }
         });
+
+
     }
 }

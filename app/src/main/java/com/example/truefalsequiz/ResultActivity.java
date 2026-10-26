@@ -29,6 +29,7 @@ public class ResultActivity extends AppCompatActivity {
 
         if (isCorrect) {
             tvResult.setText("צדקת!");
+
         } else {
             tvResult.setText("טעית...");
         }
