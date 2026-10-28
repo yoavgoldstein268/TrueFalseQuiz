@@ -1,5 +1,6 @@
 package com.example.truefalsequiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,8 +26,18 @@ public class ResultActivity extends AppCompatActivity {
         });
         TextView tvResult = findViewById(R.id.tvResult);
 
-        boolean isCorrect = getIntent().getBooleanExtra("isCorrect", false);
-
+        Intent intent=getIntent();
+        String answer= intent.getStringExtra("answer");
+        boolean isCorrect = intent.getBooleanExtra("isCorrect", false);
+        TextView tvExplanation = findViewById(R.id.tvExplanation);
+        tvExplanation.setText(answer);
+        if (isCorrect) {
+            findViewById(R.id.main)
+                    .setBackgroundColor(getColor(R.color.result_correct));
+        } else {
+            findViewById(R.id.main)
+                    .setBackgroundColor(getColor(R.color.result_wrong));
+        }
         if (isCorrect) {
             tvResult.setText("צדקת!");
 
