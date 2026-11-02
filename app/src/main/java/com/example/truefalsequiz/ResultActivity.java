@@ -51,5 +51,19 @@ public class ResultActivity extends AppCompatActivity {
                 finish();
             }
         });
+        Button btnNext = findViewById(R.id.btnNext);
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intentN = new Intent(
+                        ResultActivity.this,
+                        SecondQuestionActivity.class
+                );
+
+                startActivity(intentN);
+                finish();
+            }
+        });
     }
 }

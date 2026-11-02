@@ -16,7 +16,7 @@
         android:textColor="@color/white"
         android:layout_height="75dp"
         android:gravity="center"
-        android:text="האם קילו נוצות שווה לקילו ברזל">
+        android:text="מים יותר חמים מלבה ">
 
     </TextView>
 
