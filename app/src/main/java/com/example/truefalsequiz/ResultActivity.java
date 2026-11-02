@@ -29,6 +29,7 @@ public class ResultActivity extends AppCompatActivity {
         Intent intent=getIntent();
         String answer= intent.getStringExtra("answer");
         boolean isCorrect = intent.getBooleanExtra("isCorrect", false);
+        int questionNumber = getIntent().getIntExtra("questionNumber", 1);
         TextView tvExplanation = findViewById(R.id.tvExplanation);
         tvExplanation.setText(answer);
         if (isCorrect) {
@@ -52,9 +53,11 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
         Button btnNext = findViewById(R.id.btnNext);
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+        if (questionNumber == 2) {
+            btnNext.setVisibility(View.GONE);
+        } else {
+            btnNext.setOnClickListener(v -> {
 
                 Intent intentN = new Intent(
                         ResultActivity.this,
@@ -63,7 +66,7 @@ public class ResultActivity extends AppCompatActivity {
 
                 startActivity(intentN);
                 finish();
-            }
-        });
+            });
+        }
     }
 }

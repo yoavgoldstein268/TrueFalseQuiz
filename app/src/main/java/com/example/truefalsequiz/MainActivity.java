@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("answer", "קילו נוצות שווה לקילו ברזל ");
                 intent.putExtra("isCorrect", isCorrect);
+                intent.putExtra("questionNumber",1);
                 startActivity(intent);
             }
         });
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("answer", "קילו נוצות שווה לקילו ברזל ");
                 intent.putExtra("isCorrect", isCorrect);
+                intent.putExtra("questionNumber",1);
                 startActivity(intent);
 
             }
